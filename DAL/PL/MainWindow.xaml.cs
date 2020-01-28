@@ -22,9 +22,9 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        
 
 
+        public static int i = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -63,10 +63,11 @@ namespace PL
             }
             else if ((UserName.Text == "c") || (Password.Password == "c"))
             {
-                WebsiteManagerFirstWindow s = new WebsiteManagerFirstWindow();
+                Window1 s = new Window1();
                 s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
                 s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
                 s.Show();
+                s.LoginFlyout.IsOpen = false;
 
             }
             else
