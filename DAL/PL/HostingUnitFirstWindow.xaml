@@ -61,7 +61,8 @@
                                                             </StackPanel>
                                                         </TabItem.Header>
                                                         <StackPanel >
-                                                            <ListView Margin="10" Name="lvgetAllGuestsRequestsList"></ListView>
+                                                            <ListView Margin="10"  Name="lvgetAllGuestsRequestsList"></ListView>
+                                                            <Button Content="צור הזמנה" Click="Button_Click" />
 
                                                         </StackPanel>
                                                     </TabItem>
@@ -113,28 +114,28 @@
 
                                                 <Button Content="עידכון הזמנה" HorizontalAlignment="Center" FontSize="20" Click="UpdateOrder_Click"/>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Label Content="HostingUnitKey" HorizontalAlignment="Center" FontSize="20"/>
+                                                    <Label Content="HostingUnitKey: " HorizontalAlignment="Center" FontSize="20"/>
 
-                                                    <TextBox Name="HostingUnitKeyTextBox" HorizontalAlignment="Center" FontSize="20" />
-
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <Label Content="GuestRequestKey" HorizontalAlignment="Center" FontSize="20"/>
-
-                                                    <TextBox  Name="GuestRequestKeyTextBox" Text="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
+                                                    <TextBlock Name="HostingUnitKeyTextBox" HorizontalAlignment="Center" FontSize="20" />
 
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Label Content="OrderKey" HorizontalAlignment="Center" FontSize="20"/>
+                                                    <Label Content="GuestRequestKey: " HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <TextBlock  Name="GuestRequestKeyTextBox" Text="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="OrderKey: " HorizontalAlignment="Center" FontSize="20"/>
 
                                                     <TextBox Name="OrderKeyTextBox" Text="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
 
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Label Content="Status" HorizontalAlignment="Center" FontSize="20"/>
+                                                    <Label Content="Status: " HorizontalAlignment="Center" FontSize="20"/>
 
                                                     <ComboBox Name="StatusComboBox"/>
 
@@ -142,14 +143,14 @@
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Label Content="CreateDate" HorizontalAlignment="Center" FontSize="20"/>
+                                                    <Label Content="CreateDate: " HorizontalAlignment="Center" FontSize="20"/>
 
                                                     <DatePickerTextBox Name="CreateDateTextBox"/>
 
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Label Content="OrderDate" HorizontalAlignment="Center" FontSize="20"/>
+                                                    <Label Content="OrderDate: " HorizontalAlignment="Center" FontSize="20"/>
 
                                                     <DatePickerTextBox Name="OrderDateTextBox"/>
 

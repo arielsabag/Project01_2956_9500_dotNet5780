@@ -158,6 +158,9 @@
     <Compile Include="AddHostingUnit.xaml.cs">
       <DependentUpon>AddHostingUnit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="addOrder.xaml.cs">
+      <DependentUpon>addOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomerS.xaml.cs">
       <DependentUpon>CustomerS.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddHostingUnitHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="addOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -36,16 +36,16 @@ namespace PL//
         }
         private void BtnLoginHost_Click(object sender, RoutedEventArgs e)
         {
-            bool ok = false;
-            foreach (BE.Host item in bl.getAllHostsList())
-            {
-                if ((hostUserNameTextBox.Text == item.UserName) && (hostPasswordTextBox.Text == item.Password))
-                {
+            bool ok = true;
+            //foreach (BE.Host item in bl.getAllHostsList())
+            //{
+            //    if ((hostUserNameTextBox.Text == item.UserName) && (hostPasswordTextBox.Text == item.Password))
+            //    {
 
-                    ok = true;
-                    BE.Configuration.CurrentHost = item;
-                }
-            }
+            //        ok = true;
+            //        BE.Configuration.CurrentHost = item;
+            //    }
+            //}
             if (ok)
             {
                 HostingUnitFirstWindow s = new HostingUnitFirstWindow();
@@ -68,6 +68,11 @@ namespace PL//
             //s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
             //s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
             s.Show();
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

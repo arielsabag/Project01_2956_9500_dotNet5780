@@ -71,5 +71,12 @@ namespace PL
             CreateDateTextBox.Text = a.CreateDate.ToString();
             StatusComboBox.Text = a.Status.ToString();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            addOrder tmp = new addOrder();
+            tmp.Show();
+            BE.GuestRequest gr =  (BE.GuestRequest)lvgetAllGuestsRequestsList.SelectedItem;
+        }
     }
 }

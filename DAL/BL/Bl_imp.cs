@@ -23,13 +23,33 @@ namespace BL
         {
         }
 
+
         public void addOrder(BE.Order order)
         {
+            var a = getAllHostingUnitsList();
+            var b = getAllGuestsRequestsList();
+            foreach (var item in b)
+            {
+                if (order.GuestRequestKey == item.GuestRequestKey)
+                {
+                    foreach (var item1 in a)
+                    {
+                        if (order.HostingUnitKey == item1.HostingUnitKey)
+                        {
+                            for (DateTime date = item.EntryDate; date <= item.ReleaseDate; date = date.AddDays(1))
+                            {
+                                if (item1.Diary[date.Day, date.Month] == true)
+                                    throw new Exception("one or more days are not available in the hosting unit");
+                            }
+                        }
+                    }
+                }
 
+            }
         }
 
 
-        public void delleteHostingUnit(HostingUnit hostingUnit)
+            public void delleteHostingUnit(HostingUnit hostingUnit)
         {
 
             var a = getAllOrdersList();
@@ -129,6 +149,32 @@ namespace BL
                 }
             }
 
+        }
+
+
+
+        List<BE.HostingUnit> AvailableHostingUnitList(DateTime date, int days)
+        {
+            List<BE.HostingUnit> allAvailableUnits = new List<HostingUnit>();
+            foreach (var item in getAllHostingUnitsList())
+            {
+                DateTime tmpDate = date;
+                bool add = true;
+                for (int i = 0; i < days; i++)
+                {
+                    if (item.Diary[tmpDate.Day,tmpDate.Month] == true)
+                    {
+                        add = false;
+                    }
+                    
+                }
+                if (add)
+                {
+                    allAvailableUnits.Add(item);
+                }
+
+            }
+            return allAvailableUnits;
         }
     }
 }

@@ -9,7 +9,7 @@
 
         Title="MainWindow" Height="700" Width="1500">
     <Grid>
-        <TabControl BorderBrush="Black" BorderThickness="2">
+        <TabControl BorderBrush="Black" BorderThickness="2" SelectionChanged="TabControl_SelectionChanged">
 
             <TabItem Width="300" >
                 <TabItem.Header>
@@ -28,8 +28,12 @@
 
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
-                        <TextBox Text="שם משתמש" Margin="0,0,0,10" />
-                        <TextBox Text="ססמא" Margin="0,0,0,10"/>
+                        <Label  Content="שם משתמש" Margin="0,0,0,10" />
+
+                        <TextBox  Margin="0,0,0,10" />
+                        <Label  Content="ססמא" Margin="0,0,0,10" />
+
+                        <TextBox Margin="0,0,0,10"/>
                         <Button Content="Login" Click="BtnLoginGuestRequest_Click"/>
                     </StackPanel>
                 </Grid>
@@ -46,14 +50,19 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="495*"/>
+                        <ColumnDefinition Width="95*"/>
+                        <ColumnDefinition Width="399*"/>
+                        <ColumnDefinition Width="495*"/>
 
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
-                        <TextBox Name="hostUserNameTextBox" Text="שם משתמש" Margin="0,0,0,10" />
-                        <TextBox Name="hostPasswordTextBox" Text="ססמא" Margin="0,0,0,10"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                        <Label  Content="שם משתמש" Margin="0,0,0,10" />
+
+                        <TextBox Name="hostUserNameTextBox"  Margin="0,0,0,10" />
+                        <Label  Content="ססמא" Margin="0,0,0,10" />
+
+                        <TextBox Name="hostPasswordTextBox"  Margin="0,0,0,10"/>
                         <Button Content="Login" Click="BtnLoginHost_Click"/>
 
                     </StackPanel>
@@ -77,8 +86,12 @@
 
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
-                        <TextBox Text="שם משתמש" Margin="0,0,0,10" />
-                        <TextBox Text="ססמא" Margin="0,0,0,10"/>
+                        <Label  Content="שם משתמש" Margin="0,0,0,10" />
+
+                        <TextBox  Margin="0,0,0,10" />
+                        <Label  Content="ססמא" Margin="0,0,0,10" />
+
+                        <TextBox  Margin="0,0,0,10"/>
                         <Button Content="Login" Click="BtnLoginManager_Click"/>
 
                     </StackPanel>
