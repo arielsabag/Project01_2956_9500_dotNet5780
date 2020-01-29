@@ -13,7 +13,7 @@ namespace BL
         void addHostingUnit(BE.HostingUnit hostingUnit);
         void delleteHostingUnit(BE.HostingUnit hostingUnit);
         void updateHostingUnit(BE.HostingUnit hostingUnit);
-        void addOrder(BE.GuestRequest guestRequest);
+        void addOrder(BE.Order order);
         void updateOrder(BE.Order order);
         List<BE.HostingUnit> getAllHostingUnitsList();
         List<BE.GuestRequest> getAllGuestsRequestsList();

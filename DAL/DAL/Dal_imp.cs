@@ -70,15 +70,20 @@ namespace DAL
         }
 
         public List<HostingUnit> getAllHostingUnitsList()
-        {          
+        {
             return (from HostingUnit item in DS.DataSource.hostingUnitList
                     select item).ToList<HostingUnit>();
         }
 
         public List<Order> getAllOrdersList()
         {
-            return(from Order item in DS.DataSource.orderList
-                                      select item).ToList<Order>();
+            return (from Order item in DS.DataSource.orderList
+                    select item).ToList<Order>();
+        }
+        public List<Host> getAllHostsList()
+        {
+            return (from Host item in DS.DataSource.hostList
+                    select item).ToList<Host>();
         }
 
         public void updateGuestRequest(GuestRequest guestRequest)

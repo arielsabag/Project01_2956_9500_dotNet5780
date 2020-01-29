@@ -7,26 +7,26 @@
         mc:Ignorable="d"
                  WindowStartupLocation="CenterScreen"
 
-        Title="AddHostingUnitHost" Height="450" Width="800">
+        Title="AddHostingUnitHost" Height="700" Width="1500">
     <Grid>
-        
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="addHostingUnit" Foreground="Green" />
-                </StackPanel>
-         
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0">
-                    <TextBox Text="HostingUnitName"/>
-                    <TextBox Text="Diary"/>
-                    <ComboBox Text="Owner"/>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="addHostingUnit" Foreground="Green" />
+        </StackPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBox Text="HostingUnitName"/>
+                <TextBox Text="Diary"/>
+                <ComboBox Text="Owner"/>
 
 
 
-                </StackPanel>
-            </Grid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

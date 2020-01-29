@@ -4,367 +4,87 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:IconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-         WindowStartupLocation="CenterScreen"
-        Background="MediumSeaGreen"
-        
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <Style x:Key="TransparentBtn"
-                   TargetType="{x:Type Button}"
-                   BasedOn="{StaticResource MetroFlatButton}">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderBrush" Value="Transparent" />
-            <Setter Property="Focusable" Value="False" />
-            <Setter Property="FontSize" Value="{StaticResource FlatButtonFontSize}" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Height" Value="40" />
-            <Setter Property="Margin" Value="0 10" />
-        </Style>
-    </Window.Resources>
-    <Grid KeyDown="LoginFlyout_KeyDown">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <IconPacks:PackIconMaterial x:Name="Account"  Kind="AccountCircle" Grid.Column="1" Grid.Row="1" Margin="0,80,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="150" Foreground="White"/>
-        <Label Content="ברוכים הבאים למערכת לאיתור והתאמת נופש ממוקד לקוח" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="0,260,0,0" FontSize="40" Foreground="White" />
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" 
-                    Background="LightGray" Height="41" Width="auto"
-                    HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,350,0,0">
+                 WindowStartupLocation="CenterScreen"
 
+        Title="MainWindow" Height="700" Width="1500">
+    <Grid>
+        <TabControl BorderBrush="Black" BorderThickness="2">
 
+            <TabItem Width="300" >
+                <TabItem.Header>
+                    <TextBlock Text="דרישת לקוח" Foreground="Red" />
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
 
-            <TextBox x:Name="UserName"  Controls:TextBoxHelper.Watermark="User"
-                         Controls:TextBoxHelper.UseFloatingWatermark="True"
-                         BorderBrush="Transparent" BorderThickness="0"
-                         Width="250" Height="40" />
-            <PasswordBox Margin="10,0,0,0"  x:Name="Password" Controls:TextBoxHelper.Watermark="Password" 
-                         Controls:TextBoxHelper.UseFloatingWatermark="True"
-                         BorderBrush="Transparent" BorderThickness="0"
-                         Width="250" Height="40"  />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                        <TextBox Text="שם משתמש" Margin="0,0,0,10" />
+                        <TextBox Text="ססמא" Margin="0,0,0,10"/>
+                        <Button Content="Login" Click="BtnLoginGuestRequest_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
 
-            <Button Margin="10,0,0,0" x:Name="LoginBtn"  Width="40" Height="40" Click="LoginFlyoutBtn_Click"
-                   >
-                <IconPacks:PackIconMaterial x:Name="LoginIcon" Kind="ArrowRight" Height="10" Width="10" />
-            </Button>
-        </StackPanel>
+            <TabItem Width="300" >
+                <TabItem.Header>
+                    <TextBlock Text="יחידת אירוח" Foreground="Red" />
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
 
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                        <TextBox Name="hostUserNameTextBox" Text="שם משתמש" Margin="0,0,0,10" />
+                        <TextBox Name="hostPasswordTextBox" Text="ססמא" Margin="0,0,0,10"/>
+                        <Button Content="Login" Click="BtnLoginHost_Click"/>
 
-        <Button x:Name="WindowClose" Click="LoginFlyoutBtn_Click" 
-                HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Grid.Row="0"                                
-                Height="50" Width="50" Margin="0,0,0,0" >
-            <IconPacks:PackIconMaterial x:Name="WinClose" Kind="WindowClose" Height="17" Width="17" />
-        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="190" >
+                <TabItem.Header>
+                    <TextBlock Text="מנהל האתר" Foreground="Red" />
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                        <TextBox Text="שם משתמש" Margin="0,0,0,10" />
+                        <TextBox Text="ססמא" Margin="0,0,0,10"/>
+                        <Button Content="Login" Click="BtnLoginManager_Click"/>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
     </Grid>
 </Window>
-<!--Style="{StaticResource MetroFlatButton}"-->
-<!--Style="{StaticResource TransparentBtn}"-->
-
-<!--<Window x:Class="PL.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid>
-            <TabControl>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="מסך פתיחה" Foreground="Blue" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="77*"/>
-                        </Grid.RowDefinitions>
-
-
-                        <Border Grid.Column="0" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="2" />
-                        <Border Grid.Column="1" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="2" />
-                        <Border Grid.Column="2" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="2" RenderTransformOrigin="0.496,0.612" />
-
-                        <Label Grid.Row="0" Content="דרישת לקוח" FontSize="25" HorizontalAlignment="Center" Grid.Column="0" Margin="60,0"/>
-                        <Label Grid.Row="0" Content="יחידת אירוח" FontSize="25" HorizontalAlignment="Center" Grid.Column="1" Margin="62,0"/>
-                        <Label Grid.Row="0" Content="מנהל האתר" FontSize="25" HorizontalAlignment="Center" Grid.Column="2" Margin="62,0"/>
-
-                        <StackPanel Grid.Column="1" Grid.Row="2" Grid.RowSpan="2">
-                            <Button Content="הוספת יחידת אירוח" HorizontalAlignment="Center" Height="20" Click="Button_Click_1" />
-                            <Button Content="אזור אישי" HorizontalAlignment="Center" Height="20" Click="Button_Click" />
-                        </StackPanel>
-                        <StackPanel Grid.Column="0" Grid.Row="2" Grid.RowSpan="2">
-                            <Button Content="הוספת דרישת לקוח" HorizontalAlignment="Right" Height="20" Margin="0,0,78,0" />
-                        </StackPanel>
-
-
-                        <StackPanel Grid.Column="2" Grid.Row="2" Grid.RowSpan="2">
-                            <Button Content="שאילתות רשימת לקוחות" HorizontalAlignment="Center" Height="20" />
-                            <Button Content="שאילתות יחידות אירוח" HorizontalAlignment="Center" Height="20" />
-                            <Button Content="שאילתות רשימת הזמנות" HorizontalAlignment="Center" Height="20" />
-                            <Button Content="שאילתות נוספות" HorizontalAlignment="Center" Height="20" Margin="86,0" />
-
-                        </StackPanel>
-
-
-
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="addGuestRequest" Foreground="Blue" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="first name"/>
-                            <TextBox Text="last name"/>
-                            <TextBox Text="MailAddress"/>
-                            <Label Content="RegistrationDate"/>
-                            <DatePicker />
-                            <Label Content="EntryDate"/>
-                            <DatePicker />
-                            <Label Content="ReleaseDate"/>
-                            <DatePicker />
-                            <ComboBox Text="Area"/>
-                            <ComboBox Text="SubArea"/>
-                            <ComboBox Text="Type"/>
-                            <ComboBox Text="Adults"/>
-                            <ComboBox Text="Children"/>
-                            <ComboBox Text="Pool"/>
-                            <ComboBox Text="Jacuzzi"/>
-
-                            <ComboBox Text="Garden"/>
-
-                            <ComboBox Text="ChildrensAttractions"/>
-
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="updateGuestRequest" Foreground="Red" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="first name"/>
-                            <TextBox Text="last name"/>
-                            <TextBox Text="MailAddress"/>
-                            <Label Content="RegistrationDate"/>
-                            <DatePicker />
-                            <Label Content="EntryDate"/>
-                            <DatePicker />
-                            <Label Content="ReleaseDate"/>
-                            <DatePicker />
-                            <ComboBox Text="Area"/>
-                            <ComboBox Text="SubArea"/>
-                            <ComboBox Text="Type"/>
-                            <ComboBox Text="Adults"/>
-                            <ComboBox Text="Children"/>
-                            <ComboBox Text="Pool"/>
-                            <ComboBox Text="Jacuzzi"/>
-
-                            <ComboBox Text="Garden"/>
-
-                            <ComboBox Text="ChildrensAttractions"/>
-
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="addHostingUnit" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Owner"/>
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="delleteHostingUnit" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Owner"/>
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="updateHostingUnit" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Owner"/>
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="addOrder" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Status"/>
-                            <Label Content="CreateDate"/>
-                            <DatePicker />
-                            <Label Content="OrderDate"/>
-                            <DatePicker />
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="updateOrder" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Status"/>
-                            <Label Content="CreateDate"/>
-                            <DatePicker />
-                            <Label Content="OrderDate"/>
-                            <DatePicker />
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="getAllHostingUnitsList" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-
-                    <StackPanel >
-                        <ListView Margin="10" Name="lvgetAllHostingUnitsList"></ListView>
-                    </StackPanel>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="getAllGuestsRequestsList" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <StackPanel >
-                        <ListView Margin="10" Name="lvgetAllGuestsRequestsList"></ListView>
-
-                    </StackPanel>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="getAllOrdersList" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <StackPanel >
-                        <ListView Margin="10" Name="lvgetAllOrdersList"></ListView>
-
-                    </StackPanel>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="getAllBankBranchesInIsraelList" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <StackPanel >
-                        <ListView Margin="10" Name="lvgetAllBankBranchesInIsraelList"></ListView>
-
-                    </StackPanel>
-                </TabItem>
-
-            </TabControl>
-        </Grid>
-    </Grid>
-</Window>-->

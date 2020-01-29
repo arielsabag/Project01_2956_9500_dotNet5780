@@ -16,7 +16,7 @@ namespace BE
         public DateTime OrderDate { get; set; }
         public override string ToString()
         {
-            return base.ToString();
+            return HostingUnitKey + GuestRequestKey + OrderKey + Status + CreateDate + OrderDate;
         }
     }
 }

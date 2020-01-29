@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    interface Idal
+    public interface Idal
     {
+
         void addGuestRequest(BE.GuestRequest guestRequest);
         void updateGuestRequest(BE.GuestRequest guestRequest);
         void addHostingUnit(BE.HostingUnit hostingUnit);

@@ -5,21 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="HostingUnitFirstWindow" Height="450" Width="800">
+                 WindowStartupLocation="CenterScreen"
+
+        Title="HostingUnitFirstWindow" Height="700" Width="1500">
     <Grid>
         <TabControl BorderBrush="Black" BorderThickness="2">
 
             <TabItem Width="390" >
                 <TabItem.Header>
-                        <TextBlock Text="הוספת יחידת אירוח" Foreground="Red" />
+                    <TextBlock Text="הוספת יחידת אירוח" Foreground="Red" />
                 </TabItem.Header>
                 <Grid>
-                   
+
                 </Grid>
             </TabItem>
-            <TabItem Width="390">
+            <TabItem Width="390" HorizontalAlignment="Right">
                 <TabItem.Header>
-                        <TextBlock Text="איזור אישי" Foreground="Green" />
+                    <TextBlock Text="איזור אישי" Foreground="Green" />
                 </TabItem.Header>
                 <Grid>
                     <TabControl BorderBrush="Black" BorderThickness="2">
@@ -94,12 +96,65 @@
                                             <TextBlock Text="רשימת הזמנות" Foreground="Green" />
                                         </TabItem.Header>
                                         <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
                                             <StackPanel Grid.Column="0">
                                                 <Label Content="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
 
-                                                <ListView Margin="10" Height="300" Name="listorders"></ListView>
+                                                <ListView  Margin="10" Height="300" Name="listorders" SelectionChanged="listorders_SelectionChanged"></ListView>
 
-                                                <Button Content="עידכון הזמנה" HorizontalAlignment="Center" FontSize="20"/>
+
+
+
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1">
+
+                                                <Button Content="עידכון הזמנה" HorizontalAlignment="Center" FontSize="20" Click="UpdateOrder_Click"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="HostingUnitKey" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <TextBox Name="HostingUnitKeyTextBox" HorizontalAlignment="Center" FontSize="20" />
+
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="GuestRequestKey" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <TextBox  Name="GuestRequestKeyTextBox" Text="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="OrderKey" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <TextBox Name="OrderKeyTextBox" Text="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Status" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <ComboBox Name="StatusComboBox"/>
+
+
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="CreateDate" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <DatePickerTextBox Name="CreateDateTextBox"/>
+
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="OrderDate" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                    <DatePickerTextBox Name="OrderDateTextBox"/>
+
+
+                                                </StackPanel>
 
 
 
@@ -108,7 +163,7 @@
                                     </TabItem>
                                 </TabControl>
                             </Grid>
-                          
+
                         </TabItem>
                         <TabItem>
                             <TabItem.Header>
@@ -129,6 +184,12 @@
 
 
                                 </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <Label Content="רשימת יחידות אירוח"/>
+                                    <ListView Margin="10" Name="lvgetAllHostingUnitsList2"/>
+
+                                </StackPanel>
+
                             </Grid>
                         </TabItem>
                         <TabItem>
@@ -157,7 +218,7 @@
                     </TabControl>
                 </Grid>
             </TabItem>
-           
+
 
         </TabControl>
     </Grid>

@@ -37,6 +37,39 @@ namespace PL
             lvgetAllBankBranchesInIsraelList.ItemsSource = BankBranchList;
             lvgetAllOrdersList.ItemsSource = OrderList;
             lvgetAllHostingUnitsList.ItemsSource = HostingUnitList;
+            lvgetAllHostingUnitsList2.ItemsSource = HostingUnitList;
+            listorders.ItemsSource = OrderList;
+            StatusComboBox.ItemsSource = BE.enum_s.orderStatus.GetValues(typeof(BE.enum_s.orderStatus));
+
+        }
+
+        private void UpdateOrder_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                BE.Order AB = (BE.Order)(listorders.SelectedItem);
+
+                MainWindow.bl.updateOrder(AB);
+                MessageBox.Show("Successfully updated");
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("After the order status has changed to 'closing a deal' it is forbidden to change the order status anymore.");
+            }
+
+        }
+
+        private void listorders_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BE.Order a = (BE.Order)(listorders.SelectedItem);
+            GuestRequestKeyTextBox.Text = a.GuestRequestKey;
+            HostingUnitKeyTextBox.Text = a.HostingUnitKey;
+            OrderDateTextBox.Text = a.OrderDate.ToString();
+            OrderKeyTextBox.Text = a.OrderKey;
+            CreateDateTextBox.Text = a.CreateDate.ToString();
+            StatusComboBox.Text = a.Status.ToString();
         }
     }
 }
