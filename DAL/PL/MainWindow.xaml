@@ -8,12 +8,16 @@
                  WindowStartupLocation="CenterScreen"
 
         Title="MainWindow" Height="700" Width="1500">
-    <Grid>
-        <TabControl BorderBrush="Black" BorderThickness="2" SelectionChanged="TabControl_SelectionChanged">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="473*"/>
+            <RowDefinition Height="196*"/>
+        </Grid.RowDefinitions>
+        <TabControl  BorderBrush="Black" BorderThickness="2" SelectionChanged="TabControl_SelectionChanged" Grid.RowSpan="2">
 
-            <TabItem Width="300" >
+            <TabItem Width="500" >
                 <TabItem.Header>
-                    <TextBlock Text="דרישת לקוח" Foreground="Red" />
+                    <TextBlock Text="דרישת לקוח" HorizontalAlignment="Center" Foreground="Red" />
                 </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -22,12 +26,15 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="495*"/>
+                        <ColumnDefinition Width="137*"/>
+                        <ColumnDefinition Width="357*"/>
+                        <ColumnDefinition Width="495*"/>
 
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                    <Label Content="דרישת לקוח" Grid.Row="0" Grid.Column="2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,88,180,76" />
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
                         <Label  Content="שם משתמש" Margin="0,0,0,10" />
 
                         <TextBox  Margin="0,0,0,10" />
@@ -39,9 +46,9 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Width="300" >
+            <TabItem Width="500" >
                 <TabItem.Header>
-                    <TextBlock Text="יחידת אירוח" Foreground="Red" />
+                    <TextBlock Text="יחידת אירוח"  Foreground="Red" />
                 </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -50,13 +57,17 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="495*"/>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="24*"/>
+                        <ColumnDefinition Width="439*"/>
                         <ColumnDefinition Width="95*"/>
                         <ColumnDefinition Width="399*"/>
                         <ColumnDefinition Width="495*"/>
 
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Label Content="יחידת אירוח" Grid.Row="0" Grid.Column="5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="71,82,166,82" />
+                    <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2">
                         <Label  Content="שם משתמש" Margin="0,0,0,10" />
 
                         <TextBox Name="hostUserNameTextBox"  Margin="0,0,0,10" />
@@ -71,7 +82,7 @@
 
             <TabItem Width="190" >
                 <TabItem.Header>
-                    <TextBlock Text="מנהל האתר" Foreground="Red" />
+                    <TextBlock Text="מנהל האתר"  Foreground="Red" />
                 </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -80,12 +91,15 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="360*"/>
+                        <ColumnDefinition Width="135*"/>
+                        <ColumnDefinition Width="494*"/>
+                        <ColumnDefinition Width="495*"/>
 
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                    <Label Content="מנהל האתר" Grid.Row="0" Grid.Column="2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="172,88,135,76" Width="187" />
+
+                    <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1">
                         <Label  Content="שם משתמש" Margin="0,0,0,10" />
 
                         <TextBox  Margin="0,0,0,10" />

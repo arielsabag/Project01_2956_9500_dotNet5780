@@ -8,36 +8,36 @@
                  WindowStartupLocation="CenterScreen"
 
         Title="HostingUnitFirstWindow" Height="700" Width="1500">
-    <Grid>
-        <TabControl BorderBrush="Black" BorderThickness="2">
+    <Grid Width="1500">
+        <TabControl BorderBrush="Black" BorderThickness="2"  >
 
-            <TabItem Width="390" >
+            <TabItem Width="750" BorderBrush="MediumSeaGreen" BorderThickness="2">
                 <TabItem.Header>
-                    <TextBlock Text="הוספת יחידת אירוח" Foreground="Red" />
+                    <TextBlock Text="הוספת יחידת אירוח" FontSize="25" HorizontalAlignment="Center" Foreground="Red" />
                 </TabItem.Header>
                 <Grid>
 
                 </Grid>
             </TabItem>
-            <TabItem Width="390" HorizontalAlignment="Right">
+            <TabItem Width="750" HorizontalAlignment="Right"  BorderBrush="MediumSeaGreen" BorderThickness="2">
                 <TabItem.Header>
-                    <TextBlock Text="איזור אישי" Foreground="Green" />
+                    <TextBlock FontSize="25" HorizontalAlignment="Center" Text="איזור אישי" Foreground="Green" />
                 </TabItem.Header>
-                <Grid>
+                <Grid Width="1500">
                     <TabControl BorderBrush="Black" BorderThickness="2">
 
 
-                        <TabItem >
+                        <TabItem Width="500" >
                             <TabItem.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="הזמנה" Foreground="Red" />
+                                    <TextBlock Text="הזמנה" Foreground="Red" HorizontalAlignment="Center" FontSize="20" />
                                 </StackPanel>
                             </TabItem.Header>
-                            <Grid>
+                            <Grid Width="1500">
                                 <TabControl>
-                                    <TabItem Width="390" >
+                                    <TabItem Width="750" >
                                         <TabItem.Header>
-                                            <TextBlock Text="שאילתות רשימת לקוחות" Foreground="Red" />
+                                            <TextBlock Text="שאילתות רשימת לקוחות" HorizontalAlignment="Center" FontSize="18" Foreground="Red" />
                                         </TabItem.Header>
                                         <Grid>
                                             <StackPanel Grid.Column="1">
@@ -92,9 +92,9 @@
                                             </StackPanel>
                                         </Grid>
                                     </TabItem>
-                                    <TabItem Width="380">
+                                    <TabItem Width="750">
                                         <TabItem.Header>
-                                            <TextBlock Text="רשימת הזמנות" Foreground="Green" />
+                                            <TextBlock Text="רשימת הזמנות" HorizontalAlignment="Center"  FontSize="18" Foreground="Green" />
                                         </TabItem.Header>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
@@ -104,7 +104,14 @@
                                             <StackPanel Grid.Column="0">
                                                 <Label Content="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
 
-                                                <ListView  Margin="10" Height="300" Name="listorders" SelectionChanged="listorders_SelectionChanged"></ListView>
+                                                <ListView  Margin="10" Height="300" Name="listorders" SelectionChanged="listorders_SelectionChanged">
+                                                    <ListView.ItemContainerStyle>
+                                                        <Style TargetType="{x:Type ListViewItem}">
+                                                            <Setter Property="BorderBrush" Value="LightGray" />
+                                                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                                        </Style>
+                                                    </ListView.ItemContainerStyle>
+                                                </ListView>
 
 
 
@@ -166,10 +173,10 @@
                             </Grid>
 
                         </TabItem>
-                        <TabItem>
+                        <TabItem Width="500">
                             <TabItem.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="עדכון יחידת אירוח" Foreground="Green" />
+                                    <TextBlock Text="עדכון יחידת אירוח" FontSize="20" HorizontalAlignment="Center"  Foreground="Green" />
                                 </StackPanel>
                             </TabItem.Header>
                             <Grid>
@@ -193,10 +200,10 @@
 
                             </Grid>
                         </TabItem>
-                        <TabItem>
+                        <TabItem Width="500">
                             <TabItem.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="מחיקת יחידת אירוח" Foreground="Green" />
+                                    <TextBlock Text="מחיקת יחידת אירוח" HorizontalAlignment="Center" FontSize="20" Foreground="Green" />
                                 </StackPanel>
                             </TabItem.Header>
                             <Grid>
